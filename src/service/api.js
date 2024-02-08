@@ -30,6 +30,54 @@ export const products = [
       "age": 26
     },
     {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
+      "name": "Sam Wilson",
+      "address": "555 Elm St, Riverside",
+      "subject": "Computer Science",
+      "age": 26
+    },
+    {
       "name": "Eva Martinez",
       "address": "888 Birch Ave, Mountainview",
       "subject": "Art",

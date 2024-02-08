@@ -43,6 +43,17 @@ const Tablecel = styled(TableCell)`
 `;
 
 const Products = () => {
+  // here we add pagination
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 5;
+  const lastIndex = currentPage * recordsPerPage;
+  const firstIndex = lastIndex - recordsPerPage;
+  const records = products.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(products.length / recordsPerPage);
+  const numbers = [...Array(npage + 1).keys()].slice(1);
+
+  // State for more cotext
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -96,9 +107,9 @@ const Products = () => {
     }
   };
 
-  const handleClick = () => {
-    setOpenDialog(true);
-  };
+  // const handleClick = () => {
+  //   setOpenDialog(true);
+  // };
 
   return (
     <>
@@ -118,8 +129,9 @@ const Products = () => {
             Upload File
           </Button>
         </Stack>
-        
-         <FilterDropdowns/>
+
+        <FilterDropdowns />
+        <br />
 
         <TableContaint style={{ borderRadius: "1rem" }} component={Paper}>
           <TableContainer
@@ -141,7 +153,7 @@ const Products = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {products.map((product, index) => (
+                {records.map((product, index) => (
                   <TableRow key={index}>
                     <TableCell sx={{ border: "2px solid #263043" }}>
                       {product.name}
@@ -178,6 +190,15 @@ const Products = () => {
               </TableBody>
             </Table>
           </TableContainer>
+
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: '1rem'}}>
+            <Button variant="contained" onClick={prePage}>
+              Pri
+            </Button>
+            <Button variant="contained" onClick={nextPage}>
+              Next
+            </Button>
+          </Box>
 
           {/* Dialog for Edit */}
 
@@ -263,6 +284,18 @@ const Products = () => {
       </Container>
     </>
   );
+  function prePage() {
+    console.log("clicked pre");
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+  function nextPage() {
+    console.log("clicked next");
+    if (currentPage !== npage) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
 };
 
 export default Products;
